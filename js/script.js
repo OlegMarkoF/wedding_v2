@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
 
         const drinks =
-          document.querySelector('.t-checkboxes__hiddeninput').value || '';
+          document.querySelector('.t-checkboxes__hiddeninput').value || undefined;
 
         const check = document.querySelectorAll('.t-radio');
 
@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let attendance;
         let secondDay;
-
-        // Нужен ли вам трансфер?
 
         for (let i = 0; i < 4; i++) {
           if (check[i].checked === true && check[i].value === 'Да') {
@@ -75,13 +73,15 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
+        let arr = drinks.trim().split(';');
+
         const message = `
 📝 Новая анкета от гостя!
 
 👤 Имя: ${name}
 ✅ Присутствие: ${attendance}
 🚌 Трансфер: ${secondDay}
-🍷 Напитки: ${drinks}
+🍷 Напитки: ${arr.join(' , ')}
 
 ${new Date().toLocaleString('ru-RU')}`.trim();
 

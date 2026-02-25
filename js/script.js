@@ -1,6 +1,7 @@
 const BOT_TOKEN = '8381550218:AAEs2RgcZxOXAKAJva2PHzeC-ahnk-yD2cs';
 const CHAT_ID = '228516010';
 
+
 document.addEventListener('DOMContentLoaded', function () {
   const observer = new MutationObserver(() => {
     const form = document.querySelector('#form899457406');
@@ -100,7 +101,9 @@ ${new Date().toLocaleString('ru-RU')}`.trim();
 
           if (response.ok) {
             alert(
-              'Анкета отправлена! Спасибо, что подтвердили участие ❤️ Мы вас ждём!',
+              `Анкета отправлена!
+Спасибо, что подтвердили участие ❤️
+Мы вас ждём!`,
             );
             form.reset();
           } else {

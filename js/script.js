@@ -108,7 +108,7 @@ ${new Date().toLocaleString('ru-RU')}`.trim();
             form.reset();
           } else {
             alert(
-              'Что-то пошло не так :(',
+              `Что-то пошло не так 😢`,
             );
           }
         } catch (err) {
